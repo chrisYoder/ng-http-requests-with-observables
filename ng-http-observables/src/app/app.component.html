@@ -1,39 +1,25 @@
-<div class='container'>
-	<form>
-		<div class='form-group search-bar'>
-			<!-- 	Search  -->
-			<input class='form-control' placeholder='Search...' type='text'>
-			
-			<!-- Progress --> 
-			<div class='loader'>
-				<div class='c-three-dots-loader'></div>
-			</div>
-		</div>
-		
-		<!-- Search Result --> 
-		<div class="list-group">
-            <div class="list-group-item list-group-item-action">
-                <div _ngcontent-ert-c0="" class="media"><img alt="..." class="mr-3"
-                        src="https://restcountries.eu/data/cod.svg">
-                    <div class="media-body">
-                        <p class="mt-0">Congo (Democratic Republic of the)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="list-group-item list-group-item-action">
-                <div class="media"><img alt="..." class="mr-3" src="https://restcountries.eu/data/fin.svg">
-                    <div class="media-body">
-                        <p class="mt-0">Finland</p>
-                    </div>
-                </div>
-            </div>
-            <div class="list-group-item list-group-item-action">
-                <div class="media"><img alt="..." class="mr-3" src="https://restcountries.eu/data/nru.svg">
-                    <div class="media-body">
-                        <p class="mt-0">Nauru</p>
-                    </div>
-                </div>
-            </div>
+<div class="container">
+  <form>
+    <div class="form-group search-bar">
+      <!-- Search -->
+      <input type="text" class="form-control" placeholder="Search..." #searchBox (input)="search(searchBox.value)">
+
+      <!-- Progres -->
+      <div class="loader" *ngIf="loading">
+        <div class="c-three-dots-loader"></div>
+      </div>
+    </div>
+
+    <!-- Search Result -->
+    <div class="list-group">
+      <div class="list-group-item list-group-item-action" *ngFor="let country of countries$ | async">
+        <div class="media">
+          <img src="{{country.flag}}" class="mr-3" alt="..." height='100' width='100'>
+          <div class="media-body">
+            <p class="mt-0">{{ country.name }}</p>
+          </div>
         </div>
-	</form>
+      </div>
+    </div>
+  </form>
 </div>

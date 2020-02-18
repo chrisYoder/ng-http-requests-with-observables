@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Country } from './country';
 import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators''
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
 	
-	endpoint: string = 'https://restcountries.eu/rest/v2/name';
+	endpoint: string = 'https://restcountries.eu/rest/v2/name/';
 
   constructor(private http: HttpClient) { }
 	

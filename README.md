@@ -33,9 +33,18 @@
 
 ## Import HttpClientModule
 - Done. 
-- I don't know why the author switched to "county" instead of sticking with "Country"
+- I don't know why the author switched to "county" instead of sticking with "Country" (I did not follow him in this madness).
 
 ## Managing Http Response with Observable and RxJs Operators
+- We will use the following operators
+
+|Operator|Description
+|----|----|
+|Subject | A unique sort of RxJS Observable that supports a specific value to be multicasted to multiple observers.|
+|tap | It's an RxJS pipeable operator which is used to perform side effects such as logging each value emitted by the source Observable |
+|switchMap | It's widely used to get the latest value emitted by the observable |
+|debounceTime | emits the latest value and helps in delaying the values transmitted by the root Observable for the specified time |
+| distinctUntilChanged | Returns an Observable series that carries only distinguished adjacent elements accordin to the key selector and the comparer |
 
 ## Handle Angular HTTP Service with Observable
 
